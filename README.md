@@ -59,6 +59,50 @@ yt-dlp --js-runtimes node -F "URL"
 yt-dlp --js-runtimes node --dump-json "URL"
 ```
 
+## 🏷️ Metadata Extraction Commands
+
+### 📄 Get Title
+
+```bash
+yt-dlp --js-runtimes node --get-title "URL"
+```
+
+### 👤 Get Uploader / Channel Name
+
+```bash
+yt-dlp --js-runtimes node --get-uploader "URL"
+```
+
+### ⏱️ Get Duration
+
+```bash
+yt-dlp --js-runtimes node --get-duration "URL"
+```
+
+### 🆔 Get Video ID
+
+```bash
+yt-dlp --js-runtimes node --get-id "URL"
+```
+
+### 🖼️ Get Thumbnail URL
+
+```bash
+yt-dlp --js-runtimes node --get-thumbnail "URL"
+```
+
+### 📅 Get Upload Date
+
+```bash
+yt-dlp --js-runtimes node --get-upload-date "URL"
+```
+
+### 🔥 Get Full JSON Data
+
+```bash
+yt-dlp --js-runtimes node --dump-json "URL"
+```
+###
 ---
 
 ## 📁 File Management Commands
@@ -170,3 +214,4 @@ Telegram Send Video
 ## 👨‍💻 Author
 
 Built with ❤️ using n8n + yt-dlp
+
