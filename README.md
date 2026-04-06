@@ -38,7 +38,7 @@ A powerful automation system using **n8n**, **yt-dlp**, and **FFmpeg** to downlo
 ### ▶️ Download Video
 
 ```bash
-yt-dlp --js-runtimes node -f best -o "/home/node/video.mp4" "URL"
+yt-dlp --js-runtimes node -o "/root/.n8n-files/video.mp4" "URL"
 ```
 
 ### 🎵 Extract Audio (MP3)
