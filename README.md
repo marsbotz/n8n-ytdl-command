@@ -159,7 +159,64 @@ node -v
 ```
 
 ---
-
+🎬 🔰 BASIC COMMANDS
+▶️ Video info check
+ffmpeg -i input.mp4
+🔄 Format convert
+ffmpeg -i input.mkv output.mp4
+🎥 Extract audio
+ffmpeg -i input.mp4 -q:a 0 -map a output.mp3
+🖼️ Extract images
+ffmpeg -i input.mp4 frame_%04d.png
+✂️ CUT / TRIM COMMANDS
+⏱️ First 45 sec
+ffmpeg -i input.mp4 -t 45 output.mp4
+🎯 Specific time se cut
+ffmpeg -ss 00:01:00 -i input.mp4 -t 45 output.mp4
+⚡ Fast cut (no re-encode)
+ffmpeg -ss 00:01:00 -i input.mp4 -t 45 -c copy output.mp4
+🔊 AUDIO COMMANDS
+🎵 Audio remove
+ffmpeg -i input.mp4 -an output.mp4
+🔊 Volume increase
+ffmpeg -i input.mp4 -filter:a "volume=2.0" output.mp4
+🎧 Audio convert
+ffmpeg -i input.wav output.mp3
+🎞️ VIDEO EDIT COMMANDS
+📉 Compress video
+ffmpeg -i input.mp4 -vcodec libx264 -crf 28 output.mp4
+📏 Resize video
+ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
+🔄 Change FPS
+ffmpeg -i input.mp4 -r 30 output.mp4
+🌀 Rotate video
+ffmpeg -i input.mp4 -vf "transpose=1" output.mp4
+🧩 ADVANCED COMMANDS
+🎬 Merge video + audio
+ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac output.mp4
+🧱 Concatenate videos
+ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4
+🎥 Create GIF
+ffmpeg -i input.mp4 -t 5 output.gif
+🧊 Add watermark
+ffmpeg -i input.mp4 -i logo.png -filter_complex "overlay=10:10" output.mp4
+🔥 STREAM / PIPE COMMANDS
+📡 Pipe input/output
+ffmpeg -i pipe:0 -f mp4 pipe:1
+🌐 Stream URL
+ffmpeg -i "https://example.com/video.mp4" output.mp4
+⚙️ CODEC COMMANDS
+🎬 H.264 encode
+ffmpeg -i input.mp4 -c:v libx264 output.mp4
+🎥 H.265 encode
+ffmpeg -i input.mp4 -c:v libx265 output.mp4
+🔊 AAC audio
+ffmpeg -i input.mp4 -c:a aac output.mp4
+⚡ SPEED CONTROL
+⏩ Fast video
+ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" output.mp4
+🐢 Slow motion
+ffmpeg -i input.mp4 -filter:v "setpts=2.0*PTS" output.mp4
 ## 📤 Telegram Workflow
 
 ### 🔄 Flow
