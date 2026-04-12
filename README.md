@@ -24,7 +24,7 @@ A powerful automation system using **n8n**, **yt-dlp**, and **FFmpeg** to downlo
 * Telegram Bot Token
 
 ---
-
+curl -L "https://example.com/video.mp4" -o /root/.n8n-files/video.mp4
 ## ⚙️ Installation (Railway Worker)
 
 ```bash
