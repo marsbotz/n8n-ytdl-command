@@ -158,7 +158,56 @@ python3 --version
 node -v
 ```
 
----
+---🛠️ Basic & General Commands
+These commands help you explore your installation and media files. 
+Check version: ffmpeg -version
+Show supported formats: ffmpeg -formats
+Show available codecs: ffmpeg -codecs
+Get file information: ffmpeg -i input.mp4 -hide_banner
+Overwrite output without asking: Add -y before the output file 
+Bannerbear
+Bannerbear
+ +4
+🎞️ Video Processing
+Common tasks for manipulating video streams. 
+Convert format: ffmpeg -i input.mp4 output.avi
+Resize (Scaling): ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
+Change Frame Rate: ffmpeg -i input.mp4 -r 30 output.mp4
+Rotate Video: ffmpeg -i input.mp4 -vf "transpose=1" output.mp4 (1 = 90° clockwise)
+Trim/Cut: ffmpeg -ss 00:01:00 -i input.mp4 -t 00:00:30 -c copy output.mp4
+-ss: Start time
+-t: Duration
+Crop: ffmpeg -i input.mp4 -vf "crop=w:h:x:y" output.mp4 
+Gist
+Gist
+ +4
+🎵 Audio Processing
+Commands specifically for sound streams.
+Extract Audio: ffmpeg -i video.mp4 -vn output.mp3
+Change Bitrate: ffmpeg -i input.mp3 -ab 128k output.mp3
+Mute Video: ffmpeg -i input.mp4 -an output.mp4
+Merge Audio/Video: ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4 
+Scribd
+Scribd
+ +1
+📸 Images & Transitions
+Using FFmpeg for static visuals and complex edits. 
+Extract Single Frame: ffmpeg -i video.mp4 -ss 00:00:05 -frames:v 1 output.png
+Create GIF: ffmpeg -i video.mp4 output.gif
+Add Subtitles: ffmpeg -i input.mp4 -vf subtitles=subs.srt output.mp4
+Video to Images: ffmpeg -i video.mp4 image%03d.png
+Images to Video: ffmpeg -framerate 24 -i img%03d.png output.mp4 
+Medium
+Medium
+ +2
+🚀 Pro Tips
+Fast Seeking: Place -ss before the -i flag to seek much faster by skipping to keyframes.
+No Re-encoding: Use -c copy whenever possible to save time and preserve original quality.
+Filter Complex: Use -filter_complex for advanced tasks like watermarking or side-by-side videos. 
+Reddit
+Reddit
+ +2
+
 🎬 🔰 BASIC COMMANDS
 ▶️ Video info check
 ffmpeg -i input.mp4
